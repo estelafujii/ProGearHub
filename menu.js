@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const navLinks = document.querySelector(".nav-links");
   const header = document.querySelector(".main-header");
 
-  // Cria o botão "menu" apenas no mobile
   const menuButton = document.createElement("button");
   menuButton.textContent = "☰ Menu";
   menuButton.classList.add("menu-toggle");
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // ===== Contact form validation - add to bottom of menu.js =====
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contactForm');
-  if (!form) return; // se não estiver na Contact page, sai
+  if (!form) return; 
 
   const nameEl = document.getElementById('name');
   const emailEl = document.getElementById('email');
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!messageEl.value.trim()) { showError(messageErr); valid = false; } else hideError(messageErr);
 
     if (!valid) {
-      // foca no primeiro erro para acessibilidade
+  
       const firstError = form.querySelector('.error-message.show');
       if (firstError) {
         const parentInput = firstError.previousElementSibling;
@@ -66,21 +65,18 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // sucesso: mostrar mensagem dentro do form
+    // sucess message 
     successEl.textContent = '✅ Message sent successfully!';
     successEl.style.display = 'block';
 
-    // limpa e esconder mensagens de erro (caso)
     [nameErr,emailErr,phoneErr,messageErr].forEach(hideError);
     form.reset();
 
-    // desaparecer depois de 3s
     setTimeout(() => {
       successEl.style.display = 'none';
     }, 3000);
   });
 
-  // esconder tooltip quando usuário começa a digitar
   [nameEl,emailEl,phoneEl,messageEl].forEach(input => {
     input.addEventListener('input', () => {
       const err = document.getElementById(input.id + 'Error');
