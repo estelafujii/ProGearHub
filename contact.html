@@ -39,7 +39,7 @@
     <main class="contact-page">
     <div class="contact-card">
         <div class="card-content">
-            <form id="contact" class="contact-form" method="post" action="/contact">
+            <form id="contact" class="contact-form">
                 <h1>Contact Us</h1>
 
                 <div class="form-group">
@@ -59,12 +59,10 @@
                     <textarea required id="message" name="message" rows="5" placeholder="What are you thinking?"></textarea>
                     <span class="error-message">Please write your message</span>
                 </div>
-
                 <button type="submit" class="form-button">Submit</button>
-
-                <div class="success-message">Message sent successfully!</div>
-            </form>
-        </div>
+            <div class="success-message" id="successMessage" style="display:none;"></div>
+        </form>
+          </div>
     </div>
          
     </main>
@@ -74,5 +72,6 @@
   </footer>
 
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="menu.js"></script>
 </body>
 </html>
