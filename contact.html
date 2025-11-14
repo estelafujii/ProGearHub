@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us | ProGear Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <img class="logo" src="images/Logo.png" width="120" alt="ProGear Hub Logo">
+
+      <div class="nav-search">
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="women.html">Women</a>
+          <a href="men.html">Men</a>
+          <a href="kids.html">Kids</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="search-box">
+          <form class="search" method="get" action="search.php">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FRASE ABAIXO DO HEADER -->
+  <div class="hero-message">
+    Questions, ideas, or feedback? - We’re here to listen.
+  </div>
+    <main class="contact-page">
+    <div class="contact-card">
+        <div class="card-content">
+            <form id="contact" class="contact-form" method="post" action="/contact">
+                <h1>Contact Us</h1>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input required id="name" name="name" type="text" placeholder="Caleb Johnson">
+                    <span class="error-message">Please enter your name</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input required id="email" name="email" type="email" placeholder="caleb@example.com">
+                    <span class="error-message">Please enter a valid email</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea required id="message" name="message" rows="5" placeholder="What are you thinking?"></textarea>
+                    <span class="error-message">Please write your message</span>
+                </div>
+
+                <button type="submit" class="form-button">Submit</button>
+
+                <div class="success-message">Message sent successfully!</div>
+            </form>
+        </div>
+    </div>
+         
+    </main>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 ProGear Hub. All rights reserved.
+  </footer>
+
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+</html>
