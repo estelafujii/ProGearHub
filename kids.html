@@ -13,7 +13,6 @@
   <header class="main-header">
     <div class="header-container">
       <img class="logo" src="images/Logo.png" width="120" alt="ProGear Hub Logo">
-
       <div class="nav-search">
         <nav class="nav-links">
           <a href="index.html">Home</a>
@@ -22,34 +21,15 @@
           <a href="kids.html">Kids</a>
           <a href="contact.html">Contact Us</a>
         </nav>
-
-        <div class="search-box">
-          <form class="search" method="get" action="search.php">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-          </form>
-        </div>
       </div>
     </div>
   </header>
 
-  <!-- FRASE ABAIXO DO HEADER -->
   <div class="hero-message">
     Unleash your potential. Every move starts with the right gear.
   </div>
 
-  <!-- HERO / CAROUSEL -->
-  <section class="hero">
-    <div class="carousel"
-         data-flickity='{ "wrapAround": true, "autoPlay": 2500, "pauseAutoPlayOnHover": true, "prevNextButtons": true, "pageDots": true }'>
-      <div class="carousel-cell"><img src="images/Home.jpg" alt="Banner 1"></div>
-      <div class="carousel-cell"><img src="images/carousel1.jpg" alt="Banner 2"></div>
-      <div class="carousel-cell"><img src="images/carousel2.jpg" alt="Banner 3"></div>
-    </div>
-    <button class="product-btn" onclick="window.location.href='order.html'">Order Now</button>
-  </section>
-
-  <!-- MEN PRODUCTS -->
+  <!-- KIDS PRODUCTS -->
   <section class="featured">
     <h2>Kids Products</h2>
     <div class="product-grid">
@@ -57,54 +37,29 @@
         <img src="images/K clothes.jpg" alt="Kid's T-Shirt">
         <p>Clothing</p>
         <p class="price">From $49</p>
-       <button class="product-btn" onclick="window.location.href='order.html'">Order Now</button>
-
+        <button onclick="window.location.href='order.html?product=Kid%27s+T-Shirt&price=49'">Order Now</button>
       </div>
       <div class="product">
         <img src="images/K foot.jpg" alt="Kid's Sneakers">
         <p>Footwear</p>
         <p class="price">From $99</p>
-        <button class="product-btn" onclick="window.location.href='order.html'">Order Now</button>
-
+        <button onclick="window.location.href='order.html?product=Kid%27s+Sneakers&price=99'">Order Now</button>
       </div>
       <div class="product">
         <img src="images/K bag.jpg" alt="Kid's Accessories">
         <p>Accessories</p>
         <p class="price">From $199</p>
-       <button class="product-btn" onclick="window.location.href='order.html'">Order Now</button>
-
+        <button onclick="window.location.href='order.html?product=Kid%27s+Accessories&price=199'">Order Now</button>
       </div>
       <div class="product">
         <img src="images/K equipm.jpg" alt="Kid's Play Equipments">
         <p>Play Equipments</p>
         <p class="price">From $259</p>
-       <button class="product-btn" onclick="window.location.href='order.html'">Order Now</button>
-
+        <button onclick="window.location.href='order.html?product=Kid%27s+Play+Equipments&price=259'">Order Now</button>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="carousel testimonials-carousel"
-         data-flickity='{ "wrapAround": true, "autoPlay": 3500, "pauseAutoPlayOnHover": true, "prevNextButtons": true, "pageDots": true }'>
-      <div class="carousel-cell testimonial">
-        <p>"Great quality and fast delivery!"</p>
-        <h4>- John Carter</h4>
-      </div>
-      <div class="carousel-cell testimonial">
-        <p>"I love their menswear collection. Everything fits perfectly."</p>
-        <h4>- Mark Benson</h4>
-      </div>
-      <div class="carousel-cell testimonial">
-        <p>"Best gear for my workouts. Highly recommend!"</p>
-        <h4>- Liam Smith</h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
     © 2025 ProGear Hub. All rights reserved.
   </footer>
