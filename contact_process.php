@@ -1,22 +1,17 @@
 <?php
-// Inclui a conexão com o banco
 include 'database.php';
 
-// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recebe os dados do formulário
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    
+    $name = mysqli_real_escape_string($connection, $_POST['name']);
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $message = mysqli_real_escape_string($connection, $_POST['message']);
 
-    // Validação simples
     if (empty($name) || empty($email) || empty($message)) {
         die("Please fill in all fields.");
     }
 
-    // Insere os dados na tabela correta (enquiries)
-    $sql = "INSERT INTO enquiries (name, email, message) 
-            VALUES ('$name', '$email', '$message')";
+    $sql = "INSERT INTO enquiries (name, email, message) VALUES ('$name', '$email', '$message')";
 
     if (mysqli_query($connection, $sql)) {
         echo "<h2>Message submitted successfully!</h2>";
@@ -25,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . mysqli_error($connection);
     }
 
-    // Fecha a conexão
     mysqli_close($connection);
 }
 ?>

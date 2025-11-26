@@ -1,7 +1,6 @@
 <?php
 include 'database.php';
 
-// Recebe os dados do formulário
 $name = $_POST['name'];
 $email = $_POST['email'];
 $product = $_POST['product_name'];
