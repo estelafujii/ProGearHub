@@ -1,10 +1,47 @@
-<form action="order_process.php" method="POST">
-  <input type="text" name="customer_name" placeholder="Your Name" required>
-  <input type="email" name="customer_email" placeholder="Your Email" required>
-  
-  <input type="text" name="product_name" placeholder="Product Name" required>
+<?php
+// Pega o nome do produto via GET (ex: kids.html?product=Kid's T-Shirt)
+$product = isset($_GET['product']) ? htmlspecialchars($_GET['product']) : '';
+?>
 
-  <input type="number" name="quantity" value="1" min="1">
-  <input type="text" name="address" placeholder="Shipping Address" required>
-  <button type="submit">Buy Now</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order <?php echo $product; ?> | ProGear Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Order <?php echo $product; ?></h1>
+
+<form action="order_process.php" method="POST">
+  <input type="hidden" name="product_name" value="<?php echo $product; ?>">
+
+  <p>Product: <strong><?php echo $product; ?></strong></p>
+
+  <label>
+    Name: 
+    <input type="text" name="Customer_name" required>
+  </label><br>
+
+  <label>
+    Email: 
+    <input type="email" name="Customer_email" required>
+  </label><br>
+
+  <label>
+    Shipping Address: 
+    <input type="text" name="Address" required>
+  </label><br>
+
+  <label>
+    Quantity: 
+    <input type="number" name="Quantity" value="1" min="1" required>
+  </label><br><br>
+
+  <button type="submit">Submit Order</button>
 </form>
+
+</body>
+</html>

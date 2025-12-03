@@ -3,28 +3,31 @@ include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Escapa caracteres especiais
-    $name = mysqli_real_escape_string($connection, $_POST['name']);
-    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    // Escapa os valores para segurança
     $product = mysqli_real_escape_string($connection, $_POST['product_name']);
-    $quantity = mysqli_real_escape_string($connection, $_POST['quantity']);
-    $price = mysqli_real_escape_string($connection, $_POST['price']);
+    $name = mysqli_real_escape_string($connection, $_POST['Customer_name']);
+    $email = mysqli_real_escape_string($connection, $_POST['Customer_email']);
+    $address = mysqli_real_escape_string($connection, $_POST['Address']);
+    $quantity = intval($_POST['Quantity']); // garante que seja inteiro
 
-    if (empty($name) || empty($email) || empty($product) || empty($quantity) || empty($price)) {
-        die("Please fill in all fields.");
+    // Validação simples
+    if (empty($product) || empty($name) || empty($email) || empty($address) || $quantity < 1) {
+        die("Please fill in all fields correctly.");
     }
 
-    $sql = "INSERT INTO orders (customer_name, email, product_name, quantity, price)
-            VALUES ('$name', '$email', '$product', '$quantity', '$price')";
+    // Insere no banco
+    $sql = "INSERT INTO orders (Product_name, Quantity, Customer_name, Customer_email, Address) 
+            VALUES ('$product', $quantity, '$name', '$email', '$address')";
 
     if (mysqli_query($connection, $sql)) {
         echo "<h2>Order placed successfully!</h2>";
         echo "<p>Thank you, $name. Your order for $quantity unit(s) of <strong>$product</strong> has been received.</p>";
-        echo "<p><a href='kids.html'>Back to Kids Products</a></p>";
     } else {
         echo "Error: " . mysqli_error($connection);
     }
 
     mysqli_close($connection);
+} else {
+    die("Invalid request method.");
 }
 ?>
