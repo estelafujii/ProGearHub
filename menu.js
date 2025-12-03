@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  // ===== Menu toggle (opcional) =====
   const navLinks = document.querySelector(".nav-links");
   const header = document.querySelector(".main-header");
 
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // ===== Form validation =====
   const form = document.getElementById('contact');
-  if (form) { // só roda se houver formulário na página
+  if (form) {
     const nameEl = document.getElementById('name');
     const emailEl = document.getElementById('email');
     const messageEl = document.getElementById('message');
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const successEl = document.getElementById('successMessage');
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault(); // impede envio real da página
+      e.preventDefault();
 
       let valid = true;
 

@@ -270,7 +270,7 @@ footer {
 
 /* ===== SUCCESS MESSAGE ===== */
 .success-message {
-  display: none; /* invisível por padrão */
+  display: none;
   margin-top: 15px;
   padding: 12px;
   border-radius: 6px;

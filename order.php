@@ -1,5 +1,4 @@
 <?php
-// Pega o nome do produto via GET (ex: kids.html?product=Kid's T-Shirt)
 $product = isset($_GET['product']) ? htmlspecialchars($_GET['product']) : '';
 ?>
 
